@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogApplication", "BlogAppl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogApplication.Migrations", "BlogApplication.Migrations\BlogApplication.Migrations.csproj", "{DBD6C16E-4D21-45A3-9FFE-FF34E582DBF5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogApplication.Data", "BlogApplication.Data\BlogApplication.Data.csproj", "{1685EEA0-947C-4030-864F-C94742308BCD}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{DBD6C16E-4D21-45A3-9FFE-FF34E582DBF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DBD6C16E-4D21-45A3-9FFE-FF34E582DBF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DBD6C16E-4D21-45A3-9FFE-FF34E582DBF5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1685EEA0-947C-4030-864F-C94742308BCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1685EEA0-947C-4030-864F-C94742308BCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1685EEA0-947C-4030-864F-C94742308BCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1685EEA0-947C-4030-864F-C94742308BCD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
