@@ -14,7 +14,7 @@ namespace BlogApplication.Database.Repositories
         {
             var query = Db.From<BlogPost>();
             var posts = await Db.SelectAsync(query);
-            return posts.OrderByDescending(x => x.PublishDate).Take(10).ToList();
+            return posts.OrderByDescending(x => x.PublishDate).Take(12).ToList();
         }
     }
 }

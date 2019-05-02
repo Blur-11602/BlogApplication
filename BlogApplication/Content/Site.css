@@ -1,5 +1,4 @@
 ﻿body {
-    padding-top: 50px;
     padding-bottom: 20px;
 }
 
@@ -23,13 +22,9 @@ textarea {
     max-width: 280px;
 }
 
-.card-img-top {
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
-}
-
-.card-body {
+.card {
     border: 1px solid #CCC;
+    box-shadow: 6px 6px 9px 1px rgba(217,217,217,1);
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
     padding: 5px;

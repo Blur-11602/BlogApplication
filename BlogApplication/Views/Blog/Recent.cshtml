@@ -9,12 +9,14 @@
 <div class="row">
     @foreach (var post in Model)
     {
-        <div class="card col-md-6">
-            <img class="card-img-top" src="https://cdn1.medicalnewstoday.com/content/images/articles/322/322868/golden-retriever-puppy.jpg" alt="Image" width="100%">
-            <div class="card-body">
-                <h2><font size="4" face="georgia">@post.Title</font></h2>
-                <p><font size="2" face="verdana">@post.Body.Substring(0, Math.Min(post.Body.Length, 200))</font></p>
-                <a href="#" class="btn btn-primary">Read More...</a>
+        <div class="col-md-4">
+            <div class="card my-3 mx-1">
+                <img class="card-img-top" src="https://cdn1.medicalnewstoday.com/content/images/articles/322/322868/golden-retriever-puppy.jpg" alt="Image" width="100%">
+                <div class="card-body">
+                    <h2><font size="4" face="georgia">@post.Title</font></h2>
+                    <p><font size="2" face="verdana">@post.Body.Substring(0, Math.Min(post.Body.Length, 200))</font></p>
+                    <a href="#" class="btn btn-primary">Read More...</a>
+                </div>
             </div>
         </div>
     }
