@@ -14,6 +14,11 @@ namespace BlogApplication.Database
         private IDbConnection db;
         public IDbConnection Db => db ?? (db = MvcApplication.DbFactory.OpenDbConnection());
 
+        public virtual Task<List<T>> GetAllAsync()
+        {
+            return Db.SelectAsync<T>();
+        }
+
         public virtual Task<T> GetByIdAsync(int id)
         {
             return Db.SingleByIdAsync<T>(id);

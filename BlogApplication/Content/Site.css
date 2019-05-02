@@ -22,3 +22,15 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.card-img-top {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.card-body {
+    border: 1px solid #CCC;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    padding: 5px;
+}

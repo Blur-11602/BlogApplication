@@ -12,11 +12,9 @@ namespace BlogApplication.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly UserRepository _userRepository = new UserRepository();
-
-        public async Task<ActionResult> Index()
+        public ActionResult Index()
         {
-            return View();
+            return Redirect("./Blog/Recent");
         }
 
         public ActionResult About()
