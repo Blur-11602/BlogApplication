@@ -80,7 +80,6 @@ namespace BlogApplication.Migrations.Profiles
                         {
                             BlogPostId = blogId,
                             UserId = userId,
-                            Title = Faker.Lorem.Sentence(),
                             Body = Faker.Lorem.Sentence(),
                             PostedDate = DateTime.Now,
                         };

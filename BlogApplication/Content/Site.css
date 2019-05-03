@@ -1,5 +1,6 @@
 ﻿body {
     padding-bottom: 20px;
+    background-color: #DDD;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -24,16 +25,21 @@ textarea {
 
 .card {
     border: 1px solid #CCC;
-    box-shadow: 6px 6px 9px 1px rgba(217,217,217,1);
+    box-shadow: 6px 6px 9px 1px rgba(205, 205, 205, 1);
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
     padding: 5px;
 }
 
+.container {
+    border-radius: 10px;
+}
+
 .post-container {
-    width: 80%;
+    width: 85%;
     margin: 0 auto;
     text-align: justify;
+    background-color: whitesmoke;
 }
 
 .post-body {

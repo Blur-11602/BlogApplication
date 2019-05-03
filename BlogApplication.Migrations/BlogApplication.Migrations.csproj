@@ -91,6 +91,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extensions\MigratorExtensions.cs" />
+    <Compile Include="Migrations\Alter_Table_Comment_RemoveTitleColumn.cs" />
     <Compile Include="Migrations\Baseline.cs" />
     <Compile Include="Profiles\DevProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

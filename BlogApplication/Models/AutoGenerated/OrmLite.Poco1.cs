@@ -52,11 +52,11 @@ namespace BlogApplication.Models
         [AutoIncrement]
         public int Id { get; set;}
         [References(typeof(User))]          
-        public int? UserId { get; set;}
-        [References(typeof(BlogPost))]          
-        public int? BlogPostId { get; set;}
         [Required]
-        public string Title { get; set;}
+        public int UserId { get; set;}
+        [References(typeof(BlogPost))]          
+        [Required]
+        public int BlogPostId { get; set;}
         [Required]
         public string Body { get; set;}
         [Required]

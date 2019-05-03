@@ -1,0 +1,24 @@
+﻿@model BlogApplication.Models.Comment
+
+<div class="container pb-cmnt-container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card card-info">
+                <div class="card-body">
+                    @using (Html.BeginForm("PostComment", "Blog", FormMethod.Post, new { @class = "comment-form col-md-12" }))
+                    {
+                        @Html.HiddenFor(m => m.BlogPostId)
+                        @Html.HiddenFor(m => m.UserId)
+
+                        <div class="form-group">
+                            @Html.TextAreaFor(m => m.Body, new { @placeholder = "Write your comment here!", @class = "form-control pb-cmnt-textarea col-md-12" })
+                        </div>
+                        <div class="btn-group col-md-6 offset-md-3">
+                            <button class="btn btn-primary" type="submit">Post Comment</button>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

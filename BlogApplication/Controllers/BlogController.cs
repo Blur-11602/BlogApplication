@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
@@ -21,6 +22,7 @@ namespace BlogApplication.Controllers
             return View(blogs);
         }
 
+        [AcceptVerbs("GET")]
         public async Task<ActionResult> Details(int blogId)
         {
             var blog = await _blogRepository.GetByIdAsync(blogId);
@@ -31,10 +33,36 @@ namespace BlogApplication.Controllers
             {
                 UserFullName = $"{user.FirstName} {user.LastName}",
                 Post = blog,
-                Comments = comments
+                Comments = comments.OrderByDescending(x => x.PostedDate).ToList()
             };
 
             return View(viewModel);
+        }
+
+        [AcceptVerbs("POST")]
+        public async Task<ActionResult> PostComment(Comment comment)
+        {
+            var users = await _userRepository.GetAllAsync();
+            comment.UserId = users.First().Id;
+            comment.PostedDate = DateTime.Now;
+            var commentId = _commentRepository.InsertAsync(comment);
+            return RedirectToAction("Details", new {blogId = comment.BlogPostId});
+        }
+
+        [AcceptVerbs("GET")]
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        [AcceptVerbs("POST")]
+        public async Task<ActionResult> Create(BlogPost post)
+        {
+            var users = await _userRepository.GetAllAsync();
+            post.UserId = users.First().Id;
+            post.PublishDate = DateTime.Now;
+            var blogId = (int) await _blogRepository.InsertAsync(post);
+            return RedirectToAction("Details", new {blogId = blogId});
         }
     }
 }

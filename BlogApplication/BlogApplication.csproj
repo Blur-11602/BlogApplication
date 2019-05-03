@@ -231,6 +231,8 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Blog\Recent.cshtml" />
     <Content Include="Views\Blog\Details.cshtml" />
+    <Content Include="Views\Blog\_CommentForm.cshtml" />
+    <Content Include="Views\Blog\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
