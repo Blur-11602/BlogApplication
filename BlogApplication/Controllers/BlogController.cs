@@ -17,5 +17,11 @@ namespace BlogApplication.Controllers
             var blogs = await _blogRepository.GetRecentPosts();
             return View(blogs);
         }
+
+        public async Task<ActionResult> Details(int blogId)
+        {
+            var blog = await _blogRepository.GetByIdAsync(blogId);
+            return View(blog);
+        }
     }
 }

@@ -4,7 +4,7 @@
     ViewBag.Title = "Recent Posts";
 }
 
-<h1>Recent posts</h1>
+
 
 <div class="row">
     @foreach (var post in Model)
@@ -14,8 +14,8 @@
                 <img class="card-img-top" src="https://cdn1.medicalnewstoday.com/content/images/articles/322/322868/golden-retriever-puppy.jpg" alt="Image" width="100%">
                 <div class="card-body">
                     <h2><font size="4" face="georgia">@post.Title</font></h2>
-                    <p><font size="2" face="verdana">@post.Body.Substring(0, Math.Min(post.Body.Length, 200))</font></p>
-                    <a href="#" class="btn btn-primary">Read More...</a>
+                    <p><font size="2" face="verdana">@post.Body.Substring(0, Math.Min(post.Body.Length, 200))@if (post.Body.Length > 200) {<span>&hellip;</span>}</font></p>
+                    @Html.ActionLink("Read More...", "Details", "Blog", new {@blogId = post.Id}, new {@class="btn btn-primary"})
                 </div>
             </div>
         </div>
