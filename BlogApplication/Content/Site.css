@@ -40,7 +40,19 @@ textarea {
     margin: 0 auto;
 }
 
-form {
-    margin: 0 auto;
-    width: 250px;
+.user-comment {
+    border: 1px solid #CCC;
+    padding: 5px;
+}
+
+.pb-cmnt-container {
+    font-family: Lato;
+    margin-top: 200px;
+}
+
+.pb-cmnt-textarea {
+    resize: none;
+    padding: 20px;
+    height: 130px;
+    border: 1px solid #F2F2F2;
 }

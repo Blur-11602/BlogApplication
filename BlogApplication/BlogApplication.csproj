@@ -172,6 +172,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Database\BaseRepository.cs" />
     <Compile Include="Database\Repositories\BlogRepository.cs" />
+    <Compile Include="Database\Repositories\CommentRepository.cs" />
     <Compile Include="Database\Repositories\UserRepository.cs" />
     <Compile Include="Dtos\UserDto.cs" />
     <Compile Include="Global.asax.cs">
@@ -182,6 +183,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>OrmLite.Poco.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\BlogPostViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
