@@ -12,6 +12,7 @@ using Faker;
 using ServiceStack.OrmLite;
 using ServiceStack.OrmLite.SqlServer;
 using BlogPost = BlogApplication.Models.BlogPost;
+using Comment = BlogApplication.Models.Comment;
 using User = BlogApplication.Models.User;
 
 namespace BlogApplication.Migrations.Profiles
@@ -21,6 +22,7 @@ namespace BlogApplication.Migrations.Profiles
     {
         private const int NumOfUsers = 30;
         private const int NumOfPosts = 5;
+        private const int NumOfComments = 3;
  
         private OrmLiteConnectionFactory _dbFactory;
 
@@ -31,8 +33,16 @@ namespace BlogApplication.Migrations.Profiles
 
             using (var db = _dbFactory.Open())
             {
+                DeleteDevData(db);
                 CreateUsersAndPosts(db);
             }
+        }
+
+        private void DeleteDevData(IDbConnection db)
+        {
+            db.DeleteAll<Comment>();
+            db.DeleteAll<BlogPost>();
+            db.DeleteAll<User>();
         }
 
         private void CreateUsersAndPosts(IDbConnection db)
@@ -51,7 +61,6 @@ namespace BlogApplication.Migrations.Profiles
                 };
 
                 var userId = (int) db.Insert(user, true);
-                Console.WriteLine(userId);
 
                 for (var j = 0; j < NumOfPosts; j++)
                 {
@@ -63,7 +72,21 @@ namespace BlogApplication.Migrations.Profiles
                         PublishDate = DateTime.Now
                     };
 
-                    db.Insert(post);
+                    var blogId = (int) db.Insert(post, true);
+
+                    for (var k = 0; k < NumOfComments; k++)
+                    {
+                        var comment = new Comment
+                        {
+                            BlogPostId = blogId,
+                            UserId = userId,
+                            Title = Faker.Lorem.Sentence(),
+                            Body = Faker.Lorem.Sentence(),
+                            PostedDate = DateTime.Now,
+                        };
+
+                        var commentId = db.Insert(comment, true);
+                    }
                 }
             }
         }
